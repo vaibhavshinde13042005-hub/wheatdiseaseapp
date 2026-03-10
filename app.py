@@ -1,5 +1,5 @@
 import streamlit as st
-from tensorflow.keras.models load_model
+from tensorflow.keras.model ismport load_model
 from PIL import Image
 import numpy as np
 import cv2
@@ -70,4 +70,5 @@ if st.button("Capture from Camera"):
     else:
 
         st.warning("Camera not accessible")
+
 
