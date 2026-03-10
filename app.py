@@ -1,5 +1,6 @@
 import streamlit as st
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models 
+import load_model
 from PIL import Image
 import numpy as np
 import cv2
@@ -68,4 +69,5 @@ if st.button("Capture from Camera"):
         else:
             st.warning("Please capture a wheat leaf image only")
     else:
+
         st.warning("Camera not accessible")
