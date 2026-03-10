@@ -1,11 +1,21 @@
+
 import streamlit as st
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import cv2
+import gdown
+import os
+from tensorflow.keras.models import load_model
 
-# Load model
-model = load_model("wheat_model.h5")
+file_id = "1Vx7SHegap010nqLRfXM-1mVYue51aL66"
+model_path = "wheat_model.h5"
+
+if not os.path.exists(model_path):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, model_path, quiet=False)
+
+model = load_model(model_path)
 
 # Function to predict class from image
 def predict_image(image):
@@ -68,8 +78,4 @@ if st.button("Capture from Camera"):
         else:
             st.warning("Please capture a wheat leaf image only")
     else:
-
         st.warning("Camera not accessible")
-
-
-
